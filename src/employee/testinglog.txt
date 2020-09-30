@@ -1,0 +1,49 @@
+Testing Theory
+==============
+
+There are many goals to achieve when testing a program:
+
+1)Complete Code Coverage
+========================
+- Not every line of code in a program runs every time. The goal of 
+complete code coverage is to test enough times to ensure every line 
+gets executed (run) at least once
+
+2) Testing Boundary Conditions
+==============================
+- Use data that falls right around the limits of certain boundaries 
+- Ex -> just below, just at, and just above particular requirements
+found in loops and if statements
+
+3) Testing Extreme Conditions
+=============================
+- Use data that falls very far outside the required limits
+- Ex -> try paying employee $1000/hour or 200 hours of work
+- Ensure that program responds appropriately to this data
+
+4) Testing Efficiency
+=====================
+- We want to avoid using data sets that take us down identical paths
+of execution in the code. Once an area is tested we don't need further
+data that tests the same thing.
+
+Equivalence Class (Category) - When 2 sets of data follow the same path
+in a program, they belong to the same equivalence class. 
+Ex -> Type 1 employee 50 hours & Type 1 employee 48 hours
+
+
+Testing Log
+===========
+
+Test #              Description                     Expected                Result
+======              ===========                     ========                ======
+1 (Code Coverage)   R: 10, T:1, H: 30               300                     300
+2 (Code Coverage)   R: 10, T:1, H: 50               600                     600
+3 (Boundary)        R: 10, T:1, H: 39,40,41         OT only for 41          yup
+4 (Extreme)         R: 10, T:1, H: 0,169            Hours not set           yup
+5 (Boundary)        R: 6.74, 6.75 T:1, H:10         Rate only set for #2    yup
+6 (Boundary)        R: 30.5,30.51 T:1, H:10         Rate only set for #1    yup
+7 (Boundary)        R: 10 T:1, H:0,1,60,61          Hours only set for #2,3 yup
+8 (Boundary)        R: 10 T:0,1,2,3 H:45            Type only set for #2,3  yup
+                                                    OT only for type 1      yup
+
